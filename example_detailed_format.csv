@@ -1,0 +1,16 @@
+Account Name,Type,Dec 31 2023,Dec 31 2022
+Cash and Bank Balances,Current Asset,750000,680000
+Trade Receivables,Current Asset,420000,380000
+Inventory,Current Asset,320000,290000
+Prepaid Expenses,Current Asset,45000,38000
+Buildings and Equipment,Fixed Asset,1200000,1100000
+Patents and Trademarks,Intangible Asset,180000,165000
+Long-term Investments,Investment,250000,220000
+Trade Payables,Current Liability,(280000),(260000)
+Accrued Expenses,Current Liability,(95000),(87000)
+Short-term Loans,Current Liability,(150000),(180000)
+Bank Loans,Long-term Liability,(650000),(720000)
+Deferred Tax,Long-term Liability,(85000),(75000)
+Share Capital,Equity,(500000),(500000)
+Profit & Loss Account,Equity,(1200000),(950000)
+General Reserve,Equity,(305000),(266000)

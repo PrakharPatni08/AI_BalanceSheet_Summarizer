@@ -1,0 +1,16 @@
+Description,Category,Amount_2023,Amount_2022
+Cash,CA,850000,750000
+Receivables,CA,420000,380000
+Stock,CA,320000,290000
+Prepayments,CA,45000,38000
+Fixed Assets,NCA,1200000,1100000
+Intangibles,NCA,180000,165000
+Investments,NCA,250000,220000
+Creditors,CL,-280000,-260000
+Overdraft,CL,-150000,-180000
+Accruals,CL,-95000,-87000
+Term Loans,NCL,-650000,-720000
+Provisions,NCL,-85000,-75000
+Capital,EQ,-500000,-500000
+Reserves,EQ,-1200000,-950000
+Surplus,EQ,-305000,-266000

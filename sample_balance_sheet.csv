@@ -1,0 +1,16 @@
+Account,Category,Amount_2023,Amount_2022
+Cash and Cash Equivalents,Current Assets,850000,750000
+Accounts Receivable,Current Assets,420000,380000
+Inventory,Current Assets,320000,290000
+Prepaid Expenses,Current Assets,45000,38000
+Property Plant & Equipment,Non-Current Assets,1200000,1100000
+Intangible Assets,Non-Current Assets,180000,165000
+Investments,Non-Current Assets,250000,220000
+Accounts Payable,Current Liabilities,-280000,-260000
+Short-term Debt,Current Liabilities,-150000,-180000
+Accrued Liabilities,Current Liabilities,-95000,-87000
+Long-term Debt,Non-Current Liabilities,-650000,-720000
+Deferred Tax Liabilities,Non-Current Liabilities,-85000,-75000
+Common Stock,Equity,-500000,-500000
+Retained Earnings,Equity,-1200000,-950000
+Additional Paid-in Capital,Equity,-305000,-266000
