@@ -9,6 +9,9 @@ from typing import Dict, List, Tuple
 import re
 from intelligent_parser import IntelligentBalanceSheetParser
 
+# Gemini integration
+from gemini_client import GeminiClient
+
 class BalanceSheetAnalyzer:
     """AI-powered Balance Sheet Analyzer with Intelligent Parsing"""
     
@@ -426,26 +429,21 @@ def main():
         if analysis.get('ratios'):
             latest_year = max(analysis['ratios'].keys())
             metrics = analysis['ratios'][latest_year]
-            
-            summary = f"""
-            **Balance Sheet Analysis Summary for {latest_year}**
-            
-            **Financial Position:**
-            - Current Ratio: {metrics.get('current_ratio', 0):.2f} (Liquidity measure)
-            - Debt-to-Equity Ratio: {metrics.get('debt_to_equity', 0):.2f} (Leverage measure)
-            - Total Assets: ${metrics.get('totals', {}).get('total_assets', 0):,.0f}
-            
-            **Asset Composition:**
-            - Current Assets: {metrics.get('asset_composition', {}).get('current_assets_pct', 0):.1f}%
-            - Non-Current Assets: {metrics.get('asset_composition', {}).get('non_current_assets_pct', 0):.1f}%
-            
-            **Key Observations:**
+            # Compose prompt for Gemini
+            gemini_prompt = f"""
+            You are a financial analyst. Summarize the following balance sheet analysis in clear, professional language for an executive audience:
+            Year: {latest_year}
+            Current Ratio: {metrics.get('current_ratio', 0):.2f}
+            Debt-to-Equity Ratio: {metrics.get('debt_to_equity', 0):.2f}
+            Total Assets: ${metrics.get('totals', {}).get('total_assets', 0):,.0f}
+            Current Assets %: {metrics.get('asset_composition', {}).get('current_assets_pct', 0):.1f}%
+            Non-Current Assets %: {metrics.get('asset_composition', {}).get('non_current_assets_pct', 0):.1f}%
+            Key Insights: {'; '.join(insights[:3])}
             """
-            
-            for insight in insights[:3]:  # Show top 3 insights
-                summary += f"\n- {insight.split('**')[1] if '**' in insight else insight}"
-            
-            st.markdown(summary)
+            gemini_client = GeminiClient()
+            with st.spinner("Generating executive summary with Gemini..."):
+                gemini_summary = gemini_client.generate_summary(gemini_prompt)
+            st.markdown(gemini_summary)
         
         # Download option
         if st.button("📥 Generate Detailed Report"):
